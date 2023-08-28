@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech With Den -- Portfolio</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+    <!-- Header section -->
+    <header>
+        <h1>Tech With Den</h1>
+        <p>Web Developer</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate web developer with a strong background in front-end and back-end technologies. I love
+            turning ideas into functional and aesthetically pleasing websites and web applications.</p>
+        <p>My skills include HTML5, CSS3, JavaScript, React, Node.js, and more. I am constantly learning and improving
+            my skills to stay up-to-date with the latest web development trends.</p>
+    </section>
+
+
+    <!-- Project Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>A personal portfolio website built with HTML, CSS, and JavaScript to showcase my skills and projects.</p>
+            <a href="https://github.com/dennisiluma" target="_blank">View Project</a>
+        </div>
+        <div class="project">
+            <h3>E-commerce Website</h3>
+            <p>An e-commerce platform developed using React and Node.js. It includes features like product listings,
+                shopping cart, and user authentication.</p>
+            <a href="https://github.com/dennisiluma" target="_blank">View Project</a>
+        </div>
+        <div class="project">
+            <h3>Blog Website</h3>
+            <p>A blog website created with WordPress. It features a custom theme and various plugins for content
+                management and user interaction.</p>
+            <a href="https://github.com/dennisiluma" target=" _blank">View Project</a>
+        </div>
+    </section>
+
+
+    <!-- Contact Session -->
+    <section id="contact">
+        <h2>Contact Me</h2> <br>
+        <p>If you would like to get in touch with me, feel free to send me an email or connect with me on social media.
+        </p> <br>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:techwithden20@gmail.com">Email</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/dennisiluma">Linkedin</a></p>
+            <p>Twitter: <a href="https://twitter.com/yourtwitterhandle">Twitter</a></p>
+        </div><br>
+        <form>
+            <h3>Contact Form</h3>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="currentYear"></span> All Rights Reserved</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const currentYearElement = document.getElementById("currentYear");
+
+            const currentYear = new Date().getFullYear(); // this method get the current year
+            currentYearElement.textContent = currentYear;
+
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll("nav a");
+
+        navLinks.forEach(function (link) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute("href").substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const yOffset = -60;
+                    const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                }
+            });
+        });
+    });
+
+    </script>
+
+</body>
+
+
+</html>
